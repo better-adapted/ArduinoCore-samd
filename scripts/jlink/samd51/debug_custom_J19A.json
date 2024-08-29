@@ -1,0 +1,11 @@
+[
+  {
+    "configId": "adafruit:samd:adafruit_metro_m4",
+    "server": "jlink",
+    "servertype": "jlink",
+    "device": "ATSAMD51J19A",
+    "interface": "SWD",
+    "serverPath": "C:/Program Files/SEGGER/JLink_V794b/JLinkGDBServerCL",
+    "serverpath": "C:/Program Files/SEGGER/JLink_V794b/JLinkGDBServerCL"
+  }
+]

@@ -172,12 +172,12 @@ def build_menu(mcu, name):
     print()
 
     # comment out for now since debugger selection does not work, debug does not pickup the right openocd script
-    # print("# Menu: Debugger")
-    # script_mcu = 'samd21' if mcu == 'SAMD21' else 'samd51'
-    # print(f"{name}.menu.debugger.daplink=CMSIS-DAP (DAPLink)")
-    # print(f"{name}.menu.debugger.daplink.build.openocdscript=scripts/openocd/daplink_{script_mcu}.cfg")
-    # print(f"{name}.menu.debugger.jlink=J-Link")
-    # print(f"{name}.menu.debugger.jlink.build.openocdscript=scripts/openocd/jlink_{script_mcu}.cfg")
+    print("# Menu: Debugger")
+    script_mcu = 'samd21' if mcu == 'SAMD21' else 'samd51'
+    print(f"{name}.menu.debugger.daplink=CMSIS-DAP (DAPLink)")
+    print(f"{name}.menu.debugger.daplink.build.openocdscript=scripts/openocd/daplink_{script_mcu}.cfg")
+    print(f"{name}.menu.debugger.jlink=J-Link")
+    print(f"{name}.menu.debugger.jlink.build.openocdscript=scripts/jlink/debug_custom_J19A.json")
 
 
 def build_global_menu():
@@ -329,6 +329,11 @@ d51_board_list = [
      "0x239A", ["0x8020", "0x0020", "0x8021", "0x0021"],
      "METRO_M4", "-D__SAMD51J19A__ -DADAFRUIT_METRO_M4_EXPRESS",
      "metroM4/bootloader-metro_m4-v2.0.0-adafruit.5.bin"],
+
+    ["adafruit_smartflow_m4", "smartflow_m4", "Adafruit", "Smartflow M4",
+     "0x239A", ["0x8020", "0x0020", "0x8021", "0x0021"],
+     "SMARTFLOW_M4", "-D__SAMD51J19A__ -DSMARTFLOW_M4",
+     "Smartflow_M4/METRO_M4_sam_ba.bin"],
 
     ["adafruit_grandcentral_m4", "grand_central_m4", "Adafruit", "Grand Central M4",
      "0x239A", ["0x8031", "0x0031", "0x0032"],

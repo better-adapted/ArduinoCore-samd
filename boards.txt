@@ -1346,7 +1346,7 @@ smartflow_m4.build.board=SMARTFLOW_M4
 smartflow_m4.build.core=arduino
 smartflow_m4.build.extra_flags=-D__SAMD51J20A__ -DDSMARTFLOW_M4 -D__SAMD51__ -D__FPU_PRESENT -DARM_MATH_CM4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 {build.usb_flags}
 smartflow_m4.build.ldscript=linker_scripts/gcc/flash_app_offset_64K.ld
-smartflow_m4.build.openocdscript=scripts/openocd/daplink_samd51.cfg
+smartflow_m4.build.openocdscript=scripts/jlink/samd51/debug_custom_J19A.json
 smartflow_m4.build.variant=smartflow_m4
 smartflow_m4.build.variant_system_lib=
 smartflow_m4.build.vid=0x239A
@@ -1432,7 +1432,7 @@ adafruit_metro_m4.build.board=METRO_M4
 adafruit_metro_m4.build.core=arduino
 adafruit_metro_m4.build.extra_flags=-D__SAMD51J19A__ -DADAFRUIT_METRO_M4_EXPRESS -D__SAMD51__ -D__FPU_PRESENT -DARM_MATH_CM4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 {build.usb_flags}
 adafruit_metro_m4.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
-adafruit_metro_m4.build.openocdscript=scripts/openocd/daplink_samd51.cfg
+adafruit_metro_m4.build.openocdscript=scripts/jlink/samd51/debug_custom_J19A.json
 adafruit_metro_m4.build.variant=metro_m4
 adafruit_metro_m4.build.variant_system_lib=
 adafruit_metro_m4.build.vid=0x239A
