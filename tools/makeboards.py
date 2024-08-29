@@ -177,7 +177,7 @@ def build_menu(mcu, name):
     print(f"{name}.menu.debugger.daplink=CMSIS-DAP (DAPLink)")
     print(f"{name}.menu.debugger.daplink.build.openocdscript=scripts/openocd/daplink_{script_mcu}.cfg")
     print(f"{name}.menu.debugger.jlink=J-Link")
-    print(f"{name}.menu.debugger.jlink.build.openocdscript=scripts/jlink/debug_custom_J19A.json")
+    print(f"{name}.menu.debugger.jlink.build.openocdscript=scripts/openocd/jlink_samd51.cfg")
 
 
 def build_global_menu():
@@ -332,7 +332,7 @@ d51_board_list = [
 
     ["adafruit_smartflow_m4", "smartflow_m4", "Adafruit", "Smartflow M4",
      "0x239A", ["0x8020", "0x0020", "0x8021", "0x0021"],
-     "SMARTFLOW_M4", "-D__SAMD51J19A__ -DSMARTFLOW_M4",
+     "SMARTFLOW_M4", "-D__SAMD51J20A__ -DSMARTFLOW_M4",
      "Smartflow_M4/METRO_M4_sam_ba.bin"],
 
     ["adafruit_grandcentral_m4", "grand_central_m4", "Adafruit", "Grand Central M4",

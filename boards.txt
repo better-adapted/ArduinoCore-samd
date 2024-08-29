@@ -1314,7 +1314,7 @@ adafruit_blm_badge.menu.debug.on.build.flags.debug=-g
 
 
 # -----------------------------------
-# Smartflow M4 (SAMD51
+# Smartflow M4 (SAMD51)
 # -----------------------------------
 smartflow_m4.name=Smartflow M4 (SAMD51)
 
