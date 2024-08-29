@@ -1314,6 +1314,92 @@ adafruit_blm_badge.menu.debug.on.build.flags.debug=-g
 
 
 # -----------------------------------
+# Smartflow M4 (SAMD51
+# -----------------------------------
+smartflow_m4.name=Smartflow M4 (SAMD51)
+
+# VID/PID for Bootloader, Arduino & CircuitPython
+smartflow_m4.vid.0=0x239A
+smartflow_m4.pid.0=0x8020
+smartflow_m4.vid.1=0x239A
+smartflow_m4.pid.1=0x0020
+smartflow_m4.vid.2=0x239A
+smartflow_m4.pid.2=0x8021
+smartflow_m4.vid.3=0x239A
+smartflow_m4.pid.3=0x0021
+
+# Upload
+smartflow_m4.upload.tool=bossac18
+smartflow_m4.upload.protocol=sam-ba
+smartflow_m4.upload.maximum_size=458687
+smartflow_m4.upload.offset=0x10000
+smartflow_m4.upload.use_1200bps_touch=true
+smartflow_m4.upload.wait_for_upload_port=true
+smartflow_m4.upload.native_usb=true
+
+# Build
+smartflow_m4.build.mcu=cortex-m4
+smartflow_m4.build.f_cpu=120000000L
+smartflow_m4.build.usb_product="Metro M4"
+smartflow_m4.build.usb_manufacturer="Smartflow M4"
+smartflow_m4.build.board=SMARTFLOW_M4
+smartflow_m4.build.core=arduino
+smartflow_m4.build.extra_flags=-D__SAMD51J20A__ -DDSMARTFLOW_M4 -D__SAMD51__ -D__FPU_PRESENT -DARM_MATH_CM4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 {build.usb_flags}
+smartflow_m4.build.ldscript=linker_scripts/gcc/flash_app_offset_64K.ld
+smartflow_m4.build.openocdscript=scripts/openocd/daplink_samd51.cfg
+smartflow_m4.build.variant=smartflow_m4
+smartflow_m4.build.variant_system_lib=
+smartflow_m4.build.vid=0x239A
+smartflow_m4.build.pid=0x8020
+smartflow_m4.bootloader.tool=openocd
+smartflow_m4.bootloader.file=Smartflow_M4/METRO_M4_sam_ba.bin
+smartflow_m4.compiler.arm.cmsis.ldflags="-L{runtime.tools.CMSIS-5.4.0.path}/CMSIS/Lib/GCC/" "-L{build.variant.path}" -larm_cortexM4lf_math -mfloat-abi=hard -mfpu=fpv4-sp-d16
+
+# Menu: Cache
+smartflow_m4.menu.cache.on=Enabled
+smartflow_m4.menu.cache.on.build.cache_flags=-DENABLE_CACHE
+smartflow_m4.menu.cache.off=Disabled
+smartflow_m4.menu.cache.off.build.cache_flags=
+
+# Menu: Speed
+smartflow_m4.menu.speed.120=120 MHz (standard)
+smartflow_m4.menu.speed.120.build.f_cpu=120000000L
+smartflow_m4.menu.speed.150=150 MHz (overclock)
+smartflow_m4.menu.speed.150.build.f_cpu=150000000L
+smartflow_m4.menu.speed.180=180 MHz (overclock)
+smartflow_m4.menu.speed.180.build.f_cpu=180000000L
+smartflow_m4.menu.speed.200=200 MHz (overclock)
+smartflow_m4.menu.speed.200.build.f_cpu=200000000L
+
+# Menu: Optimization
+smartflow_m4.menu.opt.small=Small (-Os) (standard)
+smartflow_m4.menu.opt.small.build.flags.optimize=-Os
+smartflow_m4.menu.opt.fast=Fast (-O2)
+smartflow_m4.menu.opt.fast.build.flags.optimize=-O2
+smartflow_m4.menu.opt.faster=Faster (-O3)
+smartflow_m4.menu.opt.faster.build.flags.optimize=-O3
+smartflow_m4.menu.opt.fastest=Fastest (-Ofast)
+smartflow_m4.menu.opt.fastest.build.flags.optimize=-Ofast
+smartflow_m4.menu.opt.dragons=Here be dragons (-Ofast -funroll-loops)
+smartflow_m4.menu.opt.dragons.build.flags.optimize=-Ofast -funroll-loops
+
+# Menu: QSPI Speed
+smartflow_m4.menu.maxqspi.50=50 MHz (standard)
+smartflow_m4.menu.maxqspi.50.build.flags.maxqspi=-DVARIANT_QSPI_BAUD_DEFAULT=50000000
+smartflow_m4.menu.maxqspi.fcpu=CPU Speed / 2
+smartflow_m4.menu.maxqspi.fcpu.build.flags.maxqspi=-DVARIANT_QSPI_BAUD_DEFAULT=({build.f_cpu})
+
+# Menu: USB Stack
+smartflow_m4.menu.usbstack.arduino=Arduino
+smartflow_m4.menu.usbstack.tinyusb=TinyUSB
+smartflow_m4.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+
+# Menu: Debug
+smartflow_m4.menu.debug.off=Off
+smartflow_m4.menu.debug.on=On
+smartflow_m4.menu.debug.on.build.flags.debug=-g
+
+# -----------------------------------
 # Adafruit Metro M4 (SAMD51)
 # -----------------------------------
 adafruit_metro_m4.name=Adafruit Metro M4 (SAMD51)
